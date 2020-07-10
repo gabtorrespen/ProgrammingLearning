@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace InterviewExercises
 {
@@ -8,7 +8,8 @@ namespace InterviewExercises
 
         static void Main(string[] args)
         {
-            arraysNStrings.CheckPermutation("abc", "cba");
+         
+            
         }
     }
 } 
