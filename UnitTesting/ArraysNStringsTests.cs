@@ -23,8 +23,8 @@ namespace UnitTesting
         [Fact]
         public void CheckPermutation()
         {
-            Assert.True(arraysNStrings.CheckPermutation("abc","cba"));
-            Assert.False(arraysNStrings.CheckPermutation("abc","dhj"));
+            Assert.True(arraysNStrings.CheckPermutation("abc", "cba"));
+            Assert.False(arraysNStrings.CheckPermutation("abc", "dhj"));
         }
 
         [Fact]

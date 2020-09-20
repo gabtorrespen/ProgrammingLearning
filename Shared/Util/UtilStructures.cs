@@ -1,9 +1,9 @@
-﻿using InterviewExercises.DataStructures;
+﻿using Shared.DataStructures;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace InterviewExercises.Util
+namespace Shared.Util
 {
     public class UtilStructures
     {

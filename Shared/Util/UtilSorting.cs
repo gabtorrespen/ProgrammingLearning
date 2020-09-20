@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InterviewExercises.Util
+namespace Shared.Util
 {
     public static class UtilSorting
     {

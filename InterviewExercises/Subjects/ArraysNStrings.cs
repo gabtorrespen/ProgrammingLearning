@@ -1,4 +1,4 @@
-﻿using InterviewExercises.Util;
+﻿using Shared.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -67,14 +67,14 @@ namespace InterviewExercises
          * length of the string.
          * */
 
-        public char[] URLify (string word,int l)
+        public char[] URLify(string word, int l)
         {
             char[] result = new char[word.Length];
-            int spacesCount = 0,idx;
+            int spacesCount = 0, idx;
             for (int i = 0; i < l; i++)
             {
                 idx = i + (spacesCount * 2);
-                if (word[i]==' ')
+                if (word[i] == ' ')
                 {
                     result[idx] = '%';
                     result[idx + 1] = '2';
@@ -117,14 +117,14 @@ namespace InterviewExercises
             for (int i = 0; i < l; i++)
                 if (word[i] == ' ') spacesCount++;
 
-            idx = l + spacesCount * 2 - 1; 
-            for (int i=l-1; i >= 0; i--)
+            idx = l + spacesCount * 2 - 1;
+            for (int i = l - 1; i >= 0; i--)
             {
-                if(word[i]==' ')
+                if (word[i] == ' ')
                 {
                     word[idx] = '0';
-                    word[idx-1] = '2';
-                    word[idx-2] = '%';
+                    word[idx - 1] = '2';
+                    word[idx - 2] = '%';
                     idx -= 3;
                 }
                 else
@@ -146,8 +146,8 @@ namespace InterviewExercises
             int caseDifference = 'a' - 'A';
             foreach (var c in word)
             {
-                if(c>='a' && c<='z')
-                    letters[c- caseDifference]++;
+                if (c >= 'a' && c <= 'z')
+                    letters[c - caseDifference]++;
 
                 if (c >= 'A' && c <= 'Z')
                     letters[c]++;
@@ -173,8 +173,8 @@ namespace InterviewExercises
                 if (c >= 'a' && c <= 'z')
                 {
                     int value = c - 'a';
-                    int bitValue = ((1 << value) & letters)!=0?0:1;
-                    letters = (letters & ~(1 << value))|(bitValue<<value);
+                    int bitValue = ((1 << value) & letters) != 0 ? 0 : 1;
+                    letters = (letters & ~(1 << value)) | (bitValue << value);
                 }
 
                 if (c >= 'A' && c <= 'Z')
@@ -193,7 +193,7 @@ namespace InterviewExercises
                     if (oddFound)
                         return false;
                     else
-                        oddFound=true;
+                        oddFound = true;
                 }
             }
 
@@ -213,7 +213,7 @@ namespace InterviewExercises
             int[] lettersFromA = new int[128];
             int[] lettersFromB = new int[128];
 
-            for (int i = 0; i < Math.Max(a.Length,b.Length); i++)
+            for (int i = 0; i < Math.Max(a.Length, b.Length); i++)
             {
                 if (i < a.Length)
                     lettersFromA[a[i]]++;
@@ -228,10 +228,10 @@ namespace InterviewExercises
                 difference = Math.Abs(lettersFromA[i] - lettersFromB[i]);
                 if (difference > 1)
                     return false;
-                else if(difference == 1)
+                else if (difference == 1)
                 {
                     differencesFound++;
-                    if (differencesFound>2)
+                    if (differencesFound > 2)
                         return false;
                 }
             }
@@ -282,12 +282,12 @@ the original string
 
             for (int i = 0; i < len / 2; i++)
             {
-                for (int j = i; j < len - i -1; j++)
+                for (int j = i; j < len - i - 1; j++)
                 {
                     temp = matrix[i][j];
-                    matrix[i][j] = matrix[len-1-j][i];
-                    matrix[len - 1 - j][i] = matrix[len-1-i][len-1-j];
-                    matrix[len - 1 - i][len - 1 - j] = matrix[j][len-1-i];
+                    matrix[i][j] = matrix[len - 1 - j][i];
+                    matrix[len - 1 - j][i] = matrix[len - 1 - i][len - 1 - j];
+                    matrix[len - 1 - i][len - 1 - j] = matrix[j][len - 1 - i];
                     matrix[j][len - 1 - i] = temp;
                 }
             }
@@ -328,7 +328,7 @@ column are set to 0.
                 {
                     for (int j = 0; j < matrix[i].Length; j++)
                     {
-                        if(c[j]==1)
+                        if (c[j] == 1)
                             matrix[i][j] = 0;
                     }
                 }

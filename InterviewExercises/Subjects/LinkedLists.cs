@@ -1,4 +1,4 @@
-﻿using InterviewExercises.DataStructures;
+﻿using Shared.DataStructures;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,7 +16,7 @@ namespace InterviewExercises.Subjects
             Dictionary<int, bool> dict = new Dictionary<int, bool>();
             dict[head.Value] = true;
 
-            while (actual.Next!=null)
+            while (actual.Next != null)
             {
                 if (dict.ContainsKey(actual.Next.Value))
                 {
@@ -26,7 +26,7 @@ namespace InterviewExercises.Subjects
                 {
                     dict[actual.Next.Value] = true;
                     actual = actual.Next;
-                }   
+                }
             }
             return head;
         }

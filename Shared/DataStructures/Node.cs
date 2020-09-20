@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InterviewExercises.DataStructures
+namespace Shared.DataStructures
 {
     public class Node<T> where T:IComparable
     {

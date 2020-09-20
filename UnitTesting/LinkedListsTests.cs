@@ -1,6 +1,6 @@
-﻿using InterviewExercises.DataStructures;
-using InterviewExercises.Subjects;
-using InterviewExercises.Util;
+﻿using InterviewExercises.Subjects;
+using Shared.DataStructures;
+using Shared.Util;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,7 +23,7 @@ namespace UnitTesting
             Node<int> expected = UtilStructures.LinkedList.GenerateLinkedList(new List<int> { 1, 2 });
             Node<int> actual = UtilStructures.LinkedList.GenerateLinkedList(new List<int> { 1, 1, 2, 2 });
 
-            Assert.Equal(expected,linkedLists.RemoveDuplicates(actual));
+            Assert.Equal(expected, linkedLists.RemoveDuplicates(actual));
         }
     }
 }
