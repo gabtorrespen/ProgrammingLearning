@@ -1,20 +1,25 @@
-﻿using Shared.DataStructures;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace InterviewExercises.Subjects
+using DataStructures;
+
+
+namespace CodingChallenges
 {
-    public class LinkedLists
+    //TODO: Comment class
+    public static class LinkedLists
     {
-        public Node<int> RemoveDuplicates(Node<int> head)
+        public static DataStructures.LinkedList<int> RemoveDuplicates(DataStructures.LinkedList<int> linkedList)
         {
-            if (head == null)
+            if (linkedList.Head == null)
                 return null;
 
-            Node<int> actual = head;
+            DataStructures.LinkedListNode<int> actual = linkedList.Head;
             Dictionary<int, bool> dict = new Dictionary<int, bool>();
-            dict[head.Value] = true;
+            dict[actual.Value] = true;
 
             while (actual.Next != null)
             {
@@ -28,7 +33,7 @@ namespace InterviewExercises.Subjects
                     actual = actual.Next;
                 }
             }
-            return head;
+            return linkedList;
         }
 
     }

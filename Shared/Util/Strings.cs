@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Shared.Util
 {
-    public static class UtilStrings
+    // TODO: Comment class
+    public static class Strings
     {
         public static void MoveForward(char[] word, int from, int steps)
         {

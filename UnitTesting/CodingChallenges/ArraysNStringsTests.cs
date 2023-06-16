@@ -1,65 +1,61 @@
-﻿using InterviewExercises;
+﻿using NUnit.Framework;
 using System;
-using Xunit;
 
-namespace UnitTesting
+using CodingChallenges;
+
+namespace UnitTesting.CodingChallenges
 {
+    // TODO: Comment class
+    [TestFixture]
     public class ArraysNStringsTests
     {
-        ArraysNStrings arraysNStrings;
-
-        public ArraysNStringsTests()
-        {
-            arraysNStrings = new ArraysNStrings();
-        }
-
-        [Fact]
+        [Test]
         public void HasUniqueCharacters()
         {
-            Assert.True(arraysNStrings.HasUniqueCharacters("abc"));
-            Assert.False(arraysNStrings.HasUniqueCharacters("bbacc"));
+            Assert.True(ArraysNStrings.HasUniqueCharacters("abc"));
+            Assert.False(ArraysNStrings.HasUniqueCharacters("bbacc"));
         }
 
-        [Fact]
+        [Test]
         public void CheckPermutation()
         {
-            Assert.True(arraysNStrings.CheckPermutation("abc", "cba"));
-            Assert.False(arraysNStrings.CheckPermutation("abc", "dhj"));
+            Assert.True(ArraysNStrings.CheckPermutation("abc", "cba"));
+            Assert.False(ArraysNStrings.CheckPermutation("abc", "dhj"));
         }
 
-        [Fact]
+        [Test]
         public void URLify()
         {
-            Assert.Equal<char>("Mr%20John%20Smith".ToCharArray(), arraysNStrings.URLify("Mr John Smith    ", 13));
-            Assert.Equal<char>("Mr%20John%20Smith".ToCharArray(), arraysNStrings.URLifyInPlace("Mr John Smith    ".ToCharArray(), 13));
+            Assert.AreEqual("Mr%20John%20Smith".ToCharArray(), ArraysNStrings.URLify("Mr John Smith    ", 13));
+            Assert.AreEqual("Mr%20John%20Smith".ToCharArray(), ArraysNStrings.URLifyInPlace("Mr John Smith    ".ToCharArray(), 13));
         }
 
-        [Fact]
+        [Test]
         public void IsPalindromePermutation()
         {
-            Assert.True(arraysNStrings.IsPalindromePermutation("Tact Coa"));
-            Assert.False(arraysNStrings.IsPalindromePermutation("hola"));
-            Assert.True(arraysNStrings.IsPalindromePermutationBit("Tact Coa"));
-            Assert.False(arraysNStrings.IsPalindromePermutationBit("hola"));
+            Assert.True(ArraysNStrings.IsPalindromePermutation("Tact Coa"));
+            Assert.False(ArraysNStrings.IsPalindromePermutation("hola"));
+            Assert.True(ArraysNStrings.IsPalindromePermutationBit("Tact Coa"));
+            Assert.False(ArraysNStrings.IsPalindromePermutationBit("hola"));
         }
 
-        [Fact]
+        [Test]
         public void OneEditAway()
         {
-            Assert.True(arraysNStrings.OneEditAway("pale", "ple"));
-            Assert.True(arraysNStrings.OneEditAway("pales", "pale"));
-            Assert.True(arraysNStrings.OneEditAway("pale", "bale"));
-            Assert.False(arraysNStrings.OneEditAway("pale", "bake"));
-            Assert.False(arraysNStrings.OneEditAway("pale", "balec"));
+            Assert.True(ArraysNStrings.OneEditAway("pale", "ple"));
+            Assert.True(ArraysNStrings.OneEditAway("pales", "pale"));
+            Assert.True(ArraysNStrings.OneEditAway("pale", "bale"));
+            Assert.False(ArraysNStrings.OneEditAway("pale", "bake"));
+            Assert.False(ArraysNStrings.OneEditAway("pale", "balec"));
         }
 
-        [Fact]
+        [Test]
         public void StringCompression()
         {
-            Assert.Equal("a2b1c5a3", arraysNStrings.StringCompression("aabcccccaaa"));
+            Assert.AreEqual("a2b1c5a3", ArraysNStrings.StringCompression("aabcccccaaa"));
         }
 
-        [Fact]
+        [Test]
         public void RotateSquare90()
         {
             int[][] array1 = new int[][]
@@ -92,11 +88,11 @@ namespace UnitTesting
                 new int[]{ 16, 12, 8, 4 }
             };
 
-            Assert.Equal<int[][]>(array1Solution, arraysNStrings.RotateSquare90(array1));
-            Assert.Equal<int[][]>(array2Solution, arraysNStrings.RotateSquare90(array2));
+            Assert.AreEqual(array1Solution, ArraysNStrings.RotateSquare90(array1));
+            Assert.AreEqual(array2Solution, ArraysNStrings.RotateSquare90(array2));
         }
 
-        [Fact]
+        [Test]
         public void ZeroMatrix()
         {
             int[][] array1 = new int[][]
@@ -129,15 +125,15 @@ namespace UnitTesting
                 new int[]{ 0, 0, 0, 0 }
             };
 
-            Assert.Equal<int[][]>(array1Solution, arraysNStrings.ZeroMatrix(array1));
-            Assert.Equal<int[][]>(array2Solution, arraysNStrings.ZeroMatrix(array2));
+            Assert.AreEqual(array1Solution, ArraysNStrings.ZeroMatrix(array1));
+            Assert.AreEqual(array2Solution, ArraysNStrings.ZeroMatrix(array2));
         }
 
-        [Fact]
+        [Test]
         public void IsStringRotation()
         {
-            Assert.True(arraysNStrings.IsStringRotation2("waterbottle", "erbottlewat"));
-            Assert.False(arraysNStrings.IsStringRotation2("waterbottle", "erbottlewwt"));
+            Assert.True(ArraysNStrings.IsStringRotation2("waterbottle", "erbottlewat"));
+            Assert.False(ArraysNStrings.IsStringRotation2("waterbottle", "erbottlewwt"));
         }
 
     }

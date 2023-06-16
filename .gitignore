@@ -1,18 +1,18 @@
-
-InterviewExercises/bin/
+\.vs/
 
 InterviewExercises/obj/
 
-\.vs/
+Algorithms/bin/
+Algorithms/obj/
 
-UnitTesting/bin/
+CodingChallenges/bin/
+CodingChallenges/obj/
 
-UnitTesting/obj/
+DataStructures/bin/
+DataStructures/obj/
 
 Shared/bin/
-
 Shared/obj/
 
-HackerrankExercises/bin/
-
-HackerrankExercises/obj/
+UnitTesting/bin/
+UnitTesting/obj/

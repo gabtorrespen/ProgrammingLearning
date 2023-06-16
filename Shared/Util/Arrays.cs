@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Shared.Util
 {
-    public static class UtilArrays
+    // TODO: Comment class
+    public static class Arrays
     {
         public static void PrintArray<T>(List<T> array)
         {

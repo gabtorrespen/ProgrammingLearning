@@ -1,20 +1,21 @@
-﻿using Shared.Util;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace InterviewExercises
+using Algorithms.Sorting;
+using Shared.Util;
+
+namespace CodingChallenges
 {
-    public class ArraysNStrings
+    public static class ArraysNStrings
     {
         /*
          * Implement an algorithm to determine if a string has all unique characters. 
          * What if you cannot use additional data structures? 
         */
-        public bool HasUniqueCharacters(string s)
+        public static bool HasUniqueCharacters(string s)
         {
             bool[] checker = new bool[128];
             foreach (char c in s)
@@ -27,7 +28,8 @@ namespace InterviewExercises
             return true;
         }
 
-        public bool HasUniqueCharactersWithoutStructures(string s)
+        //TODO: Comment
+        public static bool HasUniqueCharactersWithoutStructures(string s)
         {
             for (int i = 0; i < s.Length; i++)
             {
@@ -43,7 +45,7 @@ namespace InterviewExercises
         /*
          * Given two strings, write a method to decide if one is a permutation of the other.
          */
-        public bool CheckPermutation(string a, string b)
+        public static bool CheckPermutation(string a, string b)
         {
             if (a.Length != b.Length) return false;
 
@@ -66,8 +68,7 @@ namespace InterviewExercises
          * has sufficient space at the end to hold the additional characters,and that you are given the "true" 
          * length of the string.
          * */
-
-        public char[] URLify(string word, int l)
+        public static char[] URLify(string word, int l)
         {
             char[] result = new char[word.Length];
             int spacesCount = 0, idx;
@@ -109,8 +110,7 @@ namespace InterviewExercises
         //    }
         //    return word;
         //}
-
-        public char[] URLifyInPlace(char[] word, int l)
+        public static char[] URLifyInPlace(char[] word, int l)
         {
             int spacesCount = 0, idx;
 
@@ -139,8 +139,7 @@ namespace InterviewExercises
         /*
          * Check if a word is a permutation of a palindrome
          */
-
-        public bool IsPalindromePermutation(string word)
+        public static bool IsPalindromePermutation(string word)
         {
             int[] letters = new int[128];
             int caseDifference = 'a' - 'A';
@@ -164,7 +163,8 @@ namespace InterviewExercises
             return true;
         }
 
-        public bool IsPalindromePermutationBit(string word)
+        //TODO: Comment
+        public static bool IsPalindromePermutationBit(string word)
         {
             int letters = 0;
 
@@ -204,8 +204,7 @@ namespace InterviewExercises
          * Given two strings, write a function to check if they are 
          * one edit (or zero edits) away. 
          */
-
-        public bool OneEditAway(string a, string b)
+        public static bool OneEditAway(string a, string b)
         {
             if (Math.Abs(a.Length - b.Length) > 1)
                 return false;
@@ -244,8 +243,7 @@ of repeated characters. For example, the string aabcccccaaa would become a2blc5a
 "compressed" string would not become smaller than the original string, your method should return 
 the original string
          */
-
-        public string StringCompression(string str)
+        public static string StringCompression(string str)
         {
             if (str.Length <= 1)
                 return str;
@@ -274,8 +272,7 @@ the original string
         /*
          Rotate matrix 90 degrees
         */
-
-        public int[][] RotateSquare90(int[][] matrix)
+        public static int[][] RotateSquare90(int[][] matrix)
         {
             int len = matrix.Length;
             int temp;
@@ -299,8 +296,7 @@ the original string
          * Write an algorithm such that if an element in an MxN matrix is 0, its entire row and 
 column are set to 0. 
         */
-
-        public int[][] ZeroMatrix(int[][] matrix)
+        public static int[][] ZeroMatrix(int[][] matrix)
         {
             int[] r = new int[matrix.Length];
             int[] c = new int[matrix[0].Length];
@@ -336,26 +332,26 @@ column are set to 0.
             return matrix;
         }
 
-
-        public bool IsStringRotation(string a, string b)
+        //TODO: Comment
+        public static bool IsStringRotation(string a, string b)
         {
             if (a.Length != b.Length)
                 return false;
 
-            var sortedA = UtilSorting.MergeSort<char>(a.ToList());
-            var sortedB = UtilSorting.MergeSort<char>(b.ToList());
+            var sortedA = MergeSort.Sort<char>(a.ToList());
+            var sortedB = MergeSort.Sort<char>(b.ToList());
 
-            return UtilStrings.IsSubstring(sortedA.ToString(), sortedB.ToString());
+            return Strings.IsSubstring(sortedA.ToString(), sortedB.ToString());
         }
 
-        public bool IsStringRotation2(string a, string b)
+        //TODO: Comment
+        public static bool IsStringRotation2(string a, string b)
         {
             if (a.Length != b.Length)
                 return false;
 
             string compositeString = a + a;
-            return UtilStrings.IsSubstring(compositeString, b);
+            return Strings.IsSubstring(compositeString, b);
         }
-
     }
 }
