@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <Folder Include="DataStructures\" />
-    <Folder Include="Algorithms\" />
   </ItemGroup>
 
 </Project>

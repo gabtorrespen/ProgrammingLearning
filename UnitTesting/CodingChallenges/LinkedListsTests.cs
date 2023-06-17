@@ -7,7 +7,7 @@ using DataStructures.Util;
 namespace UnitTesting.CodingChallenges
 {
     [TestFixture]
-    public class LinkedListsTests
+    internal class LinkedListsTests
     {
         [Test]
         public void RemoveDuplicates()

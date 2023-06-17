@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Algorithms.Sorting
 {
     //TODO: Comment class
+    //TODO: Sort the passed list
     public static class MergeSort
     {
         public static List<T> Sort<T>(List<T> array)

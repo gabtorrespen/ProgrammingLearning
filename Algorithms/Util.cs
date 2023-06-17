@@ -6,32 +6,49 @@ using System.Threading.Tasks;
 
 namespace Algorithms
 {
-    //TODO: Comment class
-    //TODO: Make it generic
+    /// <summary>
+    /// Helper class for all possible shared methods
+    /// </summary>
     public static class Util
     {
-        public static int Partition(int[] arr, int start, int end)
+        /// <summary>
+        /// Return the index of an arbitray pivot. 
+        /// The elements list is changed between the start and end indexes
+        /// to have smaller elements than the pivot to the left and greater ones to the right
+        /// </summary>
+        /// <returns>Return the index of an arbitrary pivot</returns>
+        public static int Partition<T>(List<T> elements, int start, int end)
+            where T : IComparable<T>
         {
-            int pivot = arr[end];
+            // Takes an arbitrary pivot (the last element in this implementation)
+            T pivot = elements[end];
             int i = start;
 
             for (int j = start; j < end; j++)
             {
-                if (arr[j] < pivot)
+                // If element is smaller than pivot
+                if (elements[j].CompareTo(pivot) < 0)
                 {
-                    Swap(arr, i, j);
+                    // Put the element to the left of the pivot and 
+                    // advance the pivot
+                    Swap(elements, i, j);
                     i++;
                 }
             }
-            Swap(arr, i, end);
+
+            // Finally swap the pivot to its right position
+            Swap(elements, i, end);
             return i;
         }
 
-        public static void Swap(int[] arr, int a, int b)
+        /// <summary>
+        /// Swaps two elements of a list in the specified indexes
+        /// </summary>
+        public static void Swap<T>(List<T> elements, int a, int b)
         {
-            int temp = arr[a];
-            arr[a] = arr[b];
-            arr[b] = temp;
+            T temp = elements[a];
+            elements[a] = elements[b];
+            elements[b] = temp;
         }
     }
 }

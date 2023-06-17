@@ -2,27 +2,49 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Algorithms.Sorting
 {
-    //TODO: Comment class
-    //TODO: Make it generic
-    public static class QuickSort
+    /// <summary>
+    /// Quick sort implementation class
+    /// 
+    /// O(n logn)
+    /// As every call processes halfs there are log n leves
+    /// and on each level the partition step will process every sub-array element
+    /// </summary>
+    public static class QuickSort<T> where T : IComparable<T>
     {
-        public static void Sort(int[] arr)
+        /// <summary>
+        /// Sorts the elements passed by using the quick sort algorithm
+        /// </summary>
+        public static void Sort(List<T> elements)
         {
-            Sort(arr, 0, arr.Length - 1);
+            if (elements == null)
+                return;
+
+            Sort(elements, 0, elements.Count - 1);
         }
 
-        private static void Sort(int[] arr, int start, int end)
+        /// <summary>
+        /// Sorts the elements between the start and end indexes
+        /// </summary>
+        private static void Sort(List<T> elements, int start, int end)
         {
             if (start > end)
                 return;
 
-            int pivot = Util.Partition(arr, start, end);
-            Sort(arr, start, pivot - 1);
-            Sort(arr, pivot + 1, end);
+            /*
+             * Get a pivot index and the elements list 
+             * with smaller elements to the left and
+             * greater elements to right
+             */
+            int pivot = Util.Partition(elements, start, end);
+            
+            // Repeat for elements to the left and right of the pivot
+            Sort(elements, start, pivot - 1);
+            Sort(elements, pivot + 1, end);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace UnitTesting.CodingChallenges
 {
     // TODO: Comment class
     [TestFixture]
-    public class ArraysNStringsTests
+    internal class ArraysNStringsTests
     {
         [Test]
         public void HasUniqueCharacters()

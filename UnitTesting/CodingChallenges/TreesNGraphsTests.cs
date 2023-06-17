@@ -10,7 +10,7 @@ using DataStructures.Util;
 namespace UnitTesting.CodingChallenges
 {
     [TestFixture]
-    public class TreesNGraphsTests
+    internal class TreesNGraphsTests
     {
         [Test]
         public void InOrderTraversalTest()
